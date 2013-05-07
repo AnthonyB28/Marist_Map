@@ -1,0 +1,52 @@
+C:\Program Files (x86)\Microsoft SDKs\Surface\v2.0\Samples\SDKSamples\WPF\ControlsBox\bin\Debug\InstalledAppInfo\appIcon.png
+C:\Program Files (x86)\Microsoft SDKs\Surface\v2.0\Samples\SDKSamples\WPF\ControlsBox\bin\Debug\ControlsBox.exe
+C:\Program Files (x86)\Microsoft SDKs\Surface\v2.0\Samples\SDKSamples\WPF\ControlsBox\bin\Debug\ControlsBox.pdb
+C:\Program Files (x86)\Microsoft SDKs\Surface\v2.0\Samples\SDKSamples\WPF\ControlsBox\bin\Debug\es\ControlsBox.resources.dll
+C:\Program Files (x86)\Microsoft SDKs\Surface\v2.0\Samples\SDKSamples\WPF\ControlsBox\bin\Debug\ControlsBox.exe.CodeAnalysisLog.xml
+C:\Program Files (x86)\Microsoft SDKs\Surface\v2.0\Samples\SDKSamples\WPF\ControlsBox\bin\Debug\ControlsBox.exe.lastcodeanalysissucceeded
+C:\Program Files (x86)\Microsoft SDKs\Surface\v2.0\Samples\SDKSamples\WPF\ControlsBox\obj\Debug\ResolveAssemblyReference.cache
+C:\Program Files (x86)\Microsoft SDKs\Surface\v2.0\Samples\SDKSamples\WPF\ControlsBox\obj\Debug\LibraryControlResourceDictionary.baml
+C:\Program Files (x86)\Microsoft SDKs\Surface\v2.0\Samples\SDKSamples\WPF\ControlsBox\obj\Debug\TagVisual.baml
+C:\Program Files (x86)\Microsoft SDKs\Surface\v2.0\Samples\SDKSamples\WPF\ControlsBox\obj\Debug\App.baml
+C:\Program Files (x86)\Microsoft SDKs\Surface\v2.0\Samples\SDKSamples\WPF\ControlsBox\obj\Debug\TagVisual.g.cs
+C:\Program Files (x86)\Microsoft SDKs\Surface\v2.0\Samples\SDKSamples\WPF\ControlsBox\obj\Debug\Window1.g.cs
+C:\Program Files (x86)\Microsoft SDKs\Surface\v2.0\Samples\SDKSamples\WPF\ControlsBox\obj\Debug\App.g.cs
+C:\Program Files (x86)\Microsoft SDKs\Surface\v2.0\Samples\SDKSamples\WPF\ControlsBox\obj\Debug\ControlsBox_MarkupCompile.cache
+C:\Program Files (x86)\Microsoft SDKs\Surface\v2.0\Samples\SDKSamples\WPF\ControlsBox\obj\Debug\ControlsBox_MarkupCompile.lref
+C:\Program Files (x86)\Microsoft SDKs\Surface\v2.0\Samples\SDKSamples\WPF\ControlsBox\obj\Debug\Window1.baml
+C:\Program Files (x86)\Microsoft SDKs\Surface\v2.0\Samples\SDKSamples\WPF\ControlsBox\obj\Debug\ControlsBox.g.resources
+C:\Program Files (x86)\Microsoft SDKs\Surface\v2.0\Samples\SDKSamples\WPF\ControlsBox\obj\Debug\ControlsBox.Resources.Resources.resources
+C:\Program Files (x86)\Microsoft SDKs\Surface\v2.0\Samples\SDKSamples\WPF\ControlsBox\obj\Debug\ControlsBox.Resources.Resources.es.resources
+C:\Program Files (x86)\Microsoft SDKs\Surface\v2.0\Samples\SDKSamples\WPF\ControlsBox\obj\Debug\GenerateResource.read.1.tlog
+C:\Program Files (x86)\Microsoft SDKs\Surface\v2.0\Samples\SDKSamples\WPF\ControlsBox\obj\Debug\GenerateResource.write.1.tlog
+C:\Program Files (x86)\Microsoft SDKs\Surface\v2.0\Samples\SDKSamples\WPF\ControlsBox\obj\Debug\es\ControlsBox.resources.dll
+C:\Program Files (x86)\Microsoft SDKs\Surface\v2.0\Samples\SDKSamples\WPF\ControlsBox\obj\Debug\ControlsBox.exe
+C:\Program Files (x86)\Microsoft SDKs\Surface\v2.0\Samples\SDKSamples\WPF\ControlsBox\obj\Debug\ControlsBox.pdb
+C:\Program Files (x86)\Microsoft SDKs\Surface\v2.0\Samples\SDKSamples\WPF\ControlsBox\obj\Debug\Page1.baml
+C:\Program Files (x86)\Microsoft SDKs\Surface\v2.0\Samples\SDKSamples\WPF\ControlsBox\obj\Debug\Page1.g.cs
+C:\Users\anthony.barranco1\Documents\Visual Studio 2010\Projects\MARISTMAP-BUTTONS\WPF\ControlsBox\obj\Debug\ControlsBox.exe
+C:\Users\anthony.barranco1\Documents\Visual Studio 2010\Projects\MARISTMAP-BUTTONS\WPF\ControlsBox\obj\Debug\ControlsBox.pdb
+C:\Users\anthony.barranco1\Documents\Visual Studio 2010\Projects\MARISTMAP-BUTTONS\WPF\ControlsBox\bin\Debug\InstalledAppInfo\appIcon.png
+C:\Users\anthony.barranco1\Documents\Visual Studio 2010\Projects\MARISTMAP-BUTTONS\WPF\ControlsBox\bin\Debug\ControlsBox.exe
+C:\Users\anthony.barranco1\Documents\Visual Studio 2010\Projects\MARISTMAP-BUTTONS\WPF\ControlsBox\bin\Debug\ControlsBox.pdb
+C:\Users\anthony.barranco1\Documents\Visual Studio 2010\Projects\MARISTMAP-BUTTONS\WPF\ControlsBox\bin\Debug\es\ControlsBox.resources.dll
+C:\Users\anthony.barranco1\Documents\Visual Studio 2010\Projects\MARISTMAP-BUTTONS\WPF\ControlsBox\bin\Debug\ControlsBox.exe.CodeAnalysisLog.xml
+C:\Users\anthony.barranco1\Documents\Visual Studio 2010\Projects\MARISTMAP-BUTTONS\WPF\ControlsBox\bin\Debug\ControlsBox.exe.lastcodeanalysissucceeded
+C:\Users\anthony.barranco1\Documents\Visual Studio 2010\Projects\MARISTMAP-BUTTONS\WPF\ControlsBox\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\anthony.barranco1\Documents\Visual Studio 2010\Projects\MARISTMAP-BUTTONS\WPF\ControlsBox\obj\Debug\LibraryControlResourceDictionary.baml
+C:\Users\anthony.barranco1\Documents\Visual Studio 2010\Projects\MARISTMAP-BUTTONS\WPF\ControlsBox\obj\Debug\Page1.baml
+C:\Users\anthony.barranco1\Documents\Visual Studio 2010\Projects\MARISTMAP-BUTTONS\WPF\ControlsBox\obj\Debug\TagVisual.baml
+C:\Users\anthony.barranco1\Documents\Visual Studio 2010\Projects\MARISTMAP-BUTTONS\WPF\ControlsBox\obj\Debug\App.baml
+C:\Users\anthony.barranco1\Documents\Visual Studio 2010\Projects\MARISTMAP-BUTTONS\WPF\ControlsBox\obj\Debug\Page1.g.cs
+C:\Users\anthony.barranco1\Documents\Visual Studio 2010\Projects\MARISTMAP-BUTTONS\WPF\ControlsBox\obj\Debug\TagVisual.g.cs
+C:\Users\anthony.barranco1\Documents\Visual Studio 2010\Projects\MARISTMAP-BUTTONS\WPF\ControlsBox\obj\Debug\Window1.g.cs
+C:\Users\anthony.barranco1\Documents\Visual Studio 2010\Projects\MARISTMAP-BUTTONS\WPF\ControlsBox\obj\Debug\App.g.cs
+C:\Users\anthony.barranco1\Documents\Visual Studio 2010\Projects\MARISTMAP-BUTTONS\WPF\ControlsBox\obj\Debug\ControlsBox_MarkupCompile.cache
+C:\Users\anthony.barranco1\Documents\Visual Studio 2010\Projects\MARISTMAP-BUTTONS\WPF\ControlsBox\obj\Debug\ControlsBox_MarkupCompile.lref
+C:\Users\anthony.barranco1\Documents\Visual Studio 2010\Projects\MARISTMAP-BUTTONS\WPF\ControlsBox\obj\Debug\Window1.baml
+C:\Users\anthony.barranco1\Documents\Visual Studio 2010\Projects\MARISTMAP-BUTTONS\WPF\ControlsBox\obj\Debug\ControlsBox.g.resources
+C:\Users\anthony.barranco1\Documents\Visual Studio 2010\Projects\MARISTMAP-BUTTONS\WPF\ControlsBox\obj\Debug\ControlsBox.Resources.Resources.resources
+C:\Users\anthony.barranco1\Documents\Visual Studio 2010\Projects\MARISTMAP-BUTTONS\WPF\ControlsBox\obj\Debug\ControlsBox.Resources.Resources.es.resources
+C:\Users\anthony.barranco1\Documents\Visual Studio 2010\Projects\MARISTMAP-BUTTONS\WPF\ControlsBox\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\anthony.barranco1\Documents\Visual Studio 2010\Projects\MARISTMAP-BUTTONS\WPF\ControlsBox\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\anthony.barranco1\Documents\Visual Studio 2010\Projects\MARISTMAP-BUTTONS\WPF\ControlsBox\obj\Debug\es\ControlsBox.resources.dll

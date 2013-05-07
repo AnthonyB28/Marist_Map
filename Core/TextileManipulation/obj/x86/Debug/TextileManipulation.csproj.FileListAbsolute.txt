@@ -1,0 +1,7 @@
+C:\Program Files (x86)\Microsoft SDKs\Surface\v2.0\Samples\SDKSamples\Core\TextileManipulation\bin\Debug\TextileManipulation.dll
+C:\Program Files (x86)\Microsoft SDKs\Surface\v2.0\Samples\SDKSamples\Core\TextileManipulation\bin\Debug\TextileManipulation.pdb
+C:\Program Files (x86)\Microsoft SDKs\Surface\v2.0\Samples\SDKSamples\Core\TextileManipulation\bin\Debug\TextileManipulation.dll.CodeAnalysisLog.xml
+C:\Program Files (x86)\Microsoft SDKs\Surface\v2.0\Samples\SDKSamples\Core\TextileManipulation\bin\Debug\TextileManipulation.dll.lastcodeanalysissucceeded
+C:\Program Files (x86)\Microsoft SDKs\Surface\v2.0\Samples\SDKSamples\Core\TextileManipulation\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Program Files (x86)\Microsoft SDKs\Surface\v2.0\Samples\SDKSamples\Core\TextileManipulation\obj\x86\Debug\TextileManipulation.dll
+C:\Program Files (x86)\Microsoft SDKs\Surface\v2.0\Samples\SDKSamples\Core\TextileManipulation\obj\x86\Debug\TextileManipulation.pdb

@@ -1,0 +1,81 @@
+Readme
+Marist Surface 2.0
+Anthony Barranco
+
+Useful links
+Samples
+http://msdn.microsoft.com/en-us/library/ff727916.aspx
+
+Develop Core Layer
+http://msdn.microsoft.com/en-us/library/ff727894.aspx
+
+Quick Paint Tutorial
+http://www.codeproject.com/Articles/234149/From-Soup-to-Nuts-with-the-Surface-SDK-2-0
+
+Background Image
+http://www.reflectionit.nl/Blog/2012/windows-8-xaml-tips-app-background-image
+http://msdn.microsoft.com/en-us/library/system.windows.media.tilebrush.stretch.aspx
+
+Canvas Class
+http://msdn.microsoft.com/en-us/library/system.windows.controls.canvas.aspx
+
+http://msdn.microsoft.com/en-us/library/microsoft.surface.presentation.controls.scatterviewitem_members.aspx
+
+
+MyQ
+http://social.msdn.microsoft.com/Forums/en-US/surfaceappdevelopment/thread/eb30b901-fc27-457a-afeb-613cdfe2d712
+http://stackoverflow.com/questions/16113293/make-scatterview-appear-after-touch
+
+MoveToPosition
+
+http://social.msdn.microsoft.com/Forums/en-US/surfaceappdevelopment/thread/aa82a687-0568-4bca-8d77-1e3a9c2c00a7
+
+
+Pathing
+http://stackoverflow.com/questions/2029680/wpf-c-sharp-path-how-to-get-from-a-string-with-path-data-to-geometry-in-code-n
+http://www.c-sharpcorner.com/uploadfile/mahesh/path-in-wpf/
+http://blogs.msdn.com/b/gavingear/archive/2007/02/15/intoducing-pathmaker-a-tool-for-creating-path-markup-for-wpf-e.aspx
+
+
+
+So far...
+-----------------
+Have the image background, need a higher resolution version of it.
+Set stretch to Uniform. Fills the entire resolution, regardless of aspect ratio.
+Uniform to Fill kind of breaks that. More in the Background Image links.
+
+Must use Microsoft Surface Input Simulator from the SDK for touch input.
+
+Figuring out way to make box clickable -> do this
+
+USING THE SAMPLESDK AS THE BASE. Controls Box -> Element Menu is the current test bed.
+The idea is to make it so the menu can be clicked, and then the map shows up.
+User can then tap the buildings
+
+<s:ScatterViewItem 
+                Height="50" 
+                Width="50" 
+                Orientation="0"
+                Background="#FF787878"
+                CanMove="False"
+                CanRotate="False">
+
+When clicked, want an invisible button to fire off trigger
+
+<s:SurfaceButton
+                  Click="OnItemClicked" Width="50" Height="50"/>
+
+private void OnItemClicked(object sender, RoutedEventArgs e)
+        {
+            // Get the button that was clicked and hide it.
+            ScatterView b = (ScatterView)e.Source as ScatterView;
+            b.Visibility = Visibility.Visible;
+        }
+
+
+
+Move to position - kinda cool. How to trigger event?
+http://social.msdn.microsoft.com/Forums/en-US/surfaceappdevelopment/thread/aa82a687-0568-4bca-8d77-1e3a9c2c00a7
+
+4/23
+Almost there, need to figure out appstate handling :D
