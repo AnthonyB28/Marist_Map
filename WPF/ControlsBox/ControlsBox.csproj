@@ -143,6 +143,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="img\lb.jpg" />
+    <Resource Include="img\sc.jpg" />
     <Resource Include="Resources\Icons\add.png" />
     <Resource Include="Resources\Icons\adjust color.png" />
     <Resource Include="Resources\Icons\attach.png" />
@@ -242,6 +244,16 @@
     <Resource Include="campus_map.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="maristlogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\hc.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\dn.jpg" />
+    <Resource Include="img\mc.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

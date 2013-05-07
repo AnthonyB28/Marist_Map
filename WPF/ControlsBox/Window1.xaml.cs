@@ -33,7 +33,7 @@ namespace ControlsBox
         private readonly ObservableCollection<ImageInfo> images2 = new ObservableCollection<ImageInfo>();
         public static System.Windows.Point contactPosition;
         public static readonly RoutedCommand ShowMessageCommand = new RoutedCommand("ShowMessage", typeof(Window1));
-        public static bool lbview, scview, mcview, dnview, foyview = false;
+        public static bool lbview, scview, mcview, dnview, foyview, hcview = false;
 
         /// <summary>
         /// Default constructor.
@@ -227,6 +227,19 @@ namespace ControlsBox
                     mcview = false;
                 }
             }
+            if (building.Equals("HC"))
+            {
+                if (hcview == false)
+                {
+                    Hancock.Center = Point.Parse("900,500");
+                    hcview = true;
+                }
+                else
+                {
+                    Hancock.Center = Point.Parse("1200,1200");
+                    hcview = false;
+                }
+            }
         }
 
         /// <summary>
@@ -239,12 +252,12 @@ namespace ControlsBox
         private void button_click(object sender, RoutedEventArgs e)
         {
             string building;
-            if (sender.Equals(StudentCenterButton))
+            if (sender.Equals(StudentCenterButton) || sender.Equals(StudentCenterButtonX))
             {
                 building = "SC";
                 MoveBox(building);
             }
-            if (sender.Equals(LibraryButton))
+            if (sender.Equals(LibraryButton) || sender.Equals(LibraryButtonX))
             {
                 building = "LB";
                 MoveBox(building);
@@ -254,14 +267,19 @@ namespace ControlsBox
                 building = "Foy";
                 MoveBox(building);
             }
-            if (sender.Equals(DonnellyButton))
+            if (sender.Equals(DonnellyButton) || sender.Equals(DonnellyButtonX))
             {
                 building = "DN";
                 MoveBox(building);
             }
-            if (sender.Equals(McCannButton))
+            if (sender.Equals(McCannButton) || sender.Equals(McannButtonX))
             {
                 building = "MC";
+                MoveBox(building);
+            }
+            if (sender.Equals(HancockButton) || sender.Equals(HancockButtonX))
+            {
+                building = "HC";
                 MoveBox(building);
             }
         }
@@ -306,6 +324,11 @@ namespace ControlsBox
                      if (sender.Equals(McCannButton))
                      {
                          building = "MC";
+                         MoveBox(building);
+                     }
+                     if (sender.Equals(HancockButton) || sender.Equals(HancockButtonX))
+                     {
+                         building = "HC";
                          MoveBox(building);
                      }
                  }
