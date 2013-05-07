@@ -12,6 +12,7 @@ Cannot garuntee proper button placement on other resolutions. Work in progress.
 Current Version
 ==========
 v0.84
+
 Nearly complete - 80% functionality at this point
 
 Reformatted Scatterview Objects
