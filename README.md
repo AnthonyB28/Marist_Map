@@ -2,9 +2,12 @@ Marist_Map
 ==========
 
 Interactive map of Marist for use on Microsoft Surface (coffee table) using .NET 4 and Surface 2.0 SDK. C# and XAML.
+http://www.samsung.com/us/business/commercial-display-solutions/LH40SFWTGC/ZA
 
 Runs best in 1920x1080 which is the native resolution of the Samsung Surface.
 Cannot garuntee proper button placement on other resolutions. Work in progress.
+
+
 
 Current Version
 ==========
