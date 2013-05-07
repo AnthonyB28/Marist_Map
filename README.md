@@ -11,7 +11,18 @@ Cannot garuntee proper button placement on other resolutions. Work in progress.
 
 Current Version
 ==========
-V0.71
+v0.84
+Nearly complete - 80% functionality at this point
+
+Reformatted Scatterview Objects
+
+Contain text and images for buildings except Foy
+
+New X button to close out scatterview items
+
+Formatted code a bit neater.
+
+v0.71
 
 Touch buttons work with both finger simulation and mouse click.
 
@@ -23,6 +34,8 @@ TODO
 =========
 Implement more buildings.
 
-Put text inside the Scatterview boxes for the buildings.
+Make a nicer format of text for the buildings.
+
 Figure out how to manipulate the deep menus for the Scatterview.
+
 Intiutive GUI.
