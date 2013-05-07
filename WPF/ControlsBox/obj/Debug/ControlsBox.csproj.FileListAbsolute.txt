@@ -50,3 +50,27 @@ C:\Users\anthony.barranco1\Documents\Visual Studio 2010\Projects\MARISTMAP-BUTTO
 C:\Users\anthony.barranco1\Documents\Visual Studio 2010\Projects\MARISTMAP-BUTTONS\WPF\ControlsBox\obj\Debug\GenerateResource.read.1.tlog
 C:\Users\anthony.barranco1\Documents\Visual Studio 2010\Projects\MARISTMAP-BUTTONS\WPF\ControlsBox\obj\Debug\GenerateResource.write.1.tlog
 C:\Users\anthony.barranco1\Documents\Visual Studio 2010\Projects\MARISTMAP-BUTTONS\WPF\ControlsBox\obj\Debug\es\ControlsBox.resources.dll
+Z:\Marist_Map\WPF\ControlsBox\obj\Debug\ControlsBox.exe
+Z:\Marist_Map\WPF\ControlsBox\obj\Debug\ControlsBox.pdb
+Z:\Marist_Map\WPF\ControlsBox\bin\Debug\InstalledAppInfo\appIcon.png
+Z:\Marist_Map\WPF\ControlsBox\bin\Debug\ControlsBox.exe
+Z:\Marist_Map\WPF\ControlsBox\bin\Debug\ControlsBox.pdb
+Z:\Marist_Map\WPF\ControlsBox\bin\Debug\es\ControlsBox.resources.dll
+Z:\Marist_Map\WPF\ControlsBox\obj\Debug\ResolveAssemblyReference.cache
+Z:\Marist_Map\WPF\ControlsBox\obj\Debug\LibraryControlResourceDictionary.baml
+Z:\Marist_Map\WPF\ControlsBox\obj\Debug\Page1.baml
+Z:\Marist_Map\WPF\ControlsBox\obj\Debug\TagVisual.baml
+Z:\Marist_Map\WPF\ControlsBox\obj\Debug\App.baml
+Z:\Marist_Map\WPF\ControlsBox\obj\Debug\Page1.g.cs
+Z:\Marist_Map\WPF\ControlsBox\obj\Debug\TagVisual.g.cs
+Z:\Marist_Map\WPF\ControlsBox\obj\Debug\Window1.g.cs
+Z:\Marist_Map\WPF\ControlsBox\obj\Debug\App.g.cs
+Z:\Marist_Map\WPF\ControlsBox\obj\Debug\ControlsBox_MarkupCompile.cache
+Z:\Marist_Map\WPF\ControlsBox\obj\Debug\ControlsBox_MarkupCompile.lref
+Z:\Marist_Map\WPF\ControlsBox\obj\Debug\Window1.baml
+Z:\Marist_Map\WPF\ControlsBox\obj\Debug\ControlsBox.g.resources
+Z:\Marist_Map\WPF\ControlsBox\obj\Debug\ControlsBox.Resources.Resources.resources
+Z:\Marist_Map\WPF\ControlsBox\obj\Debug\ControlsBox.Resources.Resources.es.resources
+Z:\Marist_Map\WPF\ControlsBox\obj\Debug\GenerateResource.read.1.tlog
+Z:\Marist_Map\WPF\ControlsBox\obj\Debug\GenerateResource.write.1.tlog
+Z:\Marist_Map\WPF\ControlsBox\obj\Debug\es\ControlsBox.resources.dll

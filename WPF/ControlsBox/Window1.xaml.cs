@@ -10,6 +10,17 @@ using Microsoft.Surface.Presentation;
 using Microsoft.Surface.Presentation.Input;
 using Microsoft.Surface.Presentation.Controls;
 
+
+///
+/// Main Window
+/// ==================
+/// Anthony Barranco
+/// ==================
+/// This is how the map is controlled.
+/// There may be some old SDK example code here in.
+/// Can be ignored or removed.
+/// 
+///
 namespace ControlsBox
 {
 
@@ -121,6 +132,10 @@ namespace ControlsBox
 
         }
 
+
+        /// Possible animations for the scatterview boxes.
+        /// TODO
+        
        // public static void MoveToContactPositon(ScatterViewItem svi, Point p)
         //{
          //   PointAnimation pointAnimation = new PointAnimation(svi.Center, p, TimeSpan.FromSeconds(1), FillBehavior.Stop);
@@ -136,6 +151,12 @@ namespace ControlsBox
 
         // }
 
+
+        /// <summary>
+        /// Moves the boxes based on name of parameter and if bool is false.
+        /// If the bool view is true, then it will remove the box.
+        /// </summary>
+        /// <param name="building"></param>
         public void MoveBox(string building)
         {
             if (building.Equals("SC"))
@@ -208,6 +229,13 @@ namespace ControlsBox
             }
         }
 
+        /// <summary>
+        /// If the button is clicked with a MOUSE, call the movebox function.
+        /// Passes in building name based on the button.
+        /// Could have passed in the sender, but for the sake of readibility, just decided to pass strings.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_click(object sender, RoutedEventArgs e)
         {
             string building;
@@ -238,6 +266,12 @@ namespace ControlsBox
             }
         }
 
+        /// <summary>
+        /// Same as click, but this is for the touch.
+        /// Touch control can be simulated on non-touch computer with Surface SDK 2.0
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_TouchDown(object sender, TouchEventArgs e)
         {
              string building;
@@ -281,6 +315,12 @@ namespace ControlsBox
                  e.Handled = true;
         }
 
+
+        /// <summary>
+        /// Scatterview Invisibility
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnItemClicked(object sender, RoutedEventArgs e)
         {
             // Get the button that was clicked and hide it.
