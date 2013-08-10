@@ -6,352 +6,420 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:s="http://schemas.microsoft.com/surface/2008"
-    x:Class="ControlsBox.Window1"
+    xmlns:CustomWindow="clr-namespace:CustomWindow;assembly=CustomWindow"
     xmlns:local="clr-namespace:ControlsBox" xmlns:Resources="clr-namespace:ControlsBox.Resources"     
-    Title="ControlsBox" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" d:DesignHeight="1080" d:DesignWidth="1920" SizeToContent="WidthAndHeight">
-
-
-
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
+    x:Class="ControlsBox.Window1"     
+    Title="ControlsBox" mc:Ignorable="d" d:DesignHeight="1080" d:DesignWidth="1920" SizeToContent="WidthAndHeight">
 
     <!-- ElementMenu -->
-    <Grid >
+	<Grid Width="1912" Height="1050" >
 
-        <Image Source="campus_map.jpg" Stretch="Fill" />
+		<Image Source="campus_map.jpg" Stretch="Fill" />
+		<Button x:Name="LibraryButton"
+			Content="LB" Click="button_click" TouchDown="button_TouchDown"  Width="107" Height="52" Margin="919,641.5,886,356.5" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0" />
+		<Button x:Name="StudentCenterButton" Height="75"   Opacity="0"
+			Content="SC" Click="button_click" TouchDown="button_TouchDown"  RenderTransformOrigin="0.687,0.407" Background="#FFF00A0A" Width="116" Margin="631,658,1165,317" HorizontalAlignment="Center" VerticalAlignment="Center" />
+		<Button x:Name="FoyButton" Height="75" Width="200"
+			Content="Foy" Click="button_click" TouchDown="button_TouchDown" Margin="1078,487.5,634,487.5" Opacity="0" />
+		<Button x:Name="McCannButton" Height="100" Width="100"   Opacity="0"
+			Content="MC" Click="button_click" TouchDown="button_TouchDown" Margin="300,812.5,1512,137.5" />
+		<Button x:Name="DonnellyButton" Height="100"
+			Content="DN" Click="button_click" TouchDown="button_TouchDown"  Width="134" Margin="1063,725.5,715,224.5" Opacity="0"/>
+		<Button x:Name="HancockButton" Height="50" Width="140"
+			Content="Hancock" Click="button_click" TouchDown="button_TouchDown" Margin="898,591.5,874,408.5" Opacity="0" />
+		<Grid x:Name ="MaristInfo" Opacity="0.8">
+            <Grid.Resources>
+                <local:Tweets x:Key="heading"/>
+                <local:Tweets x:Key="tweets"/>
+            </Grid.Resources>
+			<Rectangle Fill="Gray" Margin="1523,0,0,729" Height="321" Width="389">
+				<Rectangle.Effect>
+					<DropShadowEffect/>
+				</Rectangle.Effect></Rectangle>
+			<Image Height="139" HorizontalAlignment="Left" Margin="1540,0,0,0" x:Name="logo" Stretch="Fill" VerticalAlignment="Top" Width="298" Source="maristlogo.png" />
+            <ListBox ItemsSource="{StaticResource tweets}" Height="251" Margin="395.5,139,1151.5,0" x:Name="twitterBox" VerticalAlignment="Top" Width="365">
+                <ListBox.ItemTemplate>
+					<DataTemplate>
+						<StackPanel>
+							<StackPanel Width="340">
+                                <TextBlock Text="{Binding tweet}" TextWrapping="Wrap" MaxWidth="340" FontSize="21" />
+                                <TextBlock Text="------------" FontSize="19"></TextBlock>
+							</StackPanel>
+						</StackPanel> 
+                    </DataTemplate> 
+                </ListBox.ItemTemplate>
+
+            </ListBox>
+            <ListBox ItemsSource="{StaticResource heading}" Height="102" Margin="395.5,40,1151.5,0" x:Name="twitterBoxHead" VerticalAlignment="Top" Width="365">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                    	<StackPanel>
+                    		<StackPanel Width="340">
+                    			<Image Source="{Binding imgSrc}"  VerticalAlignment="Center" Height="50" Width="50"/>
+                    			<TextBlock Text="{Binding user}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25" />
+                    		</StackPanel>
+                    	</StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+			<TextBlock Height="167" HorizontalAlignment="Left" Margin="1532,145,0,0" x:Name="maristBlock" VerticalAlignment="Top" Width="358" FontSize="25" ><Run Text="Welcome to the interactive map of Marist College. This is a prototype! Please tap a building to see more."/></TextBlock>
+		</Grid>
+		<Canvas x:Name="myCanvas" HorizontalAlignment="Left" Height="1050" VerticalAlignment="Top" Width="1912" MaxWidth="1912" MaxHeight="1050"/>
+
+		<s:ScatterView x:Name="MainScatterView" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,10,0,-10" Width="1912" Height="1050"  >
+
+			<s:ScatterView.Resources>
+				<TextBlock x:Shared="true"  x:Key="Textbox" HorizontalAlignment="Left" Margin="0,0,0,0"  Text="TestingTesting" VerticalAlignment="Top" Width="100" FontSize="25" />
+				<Image x:Shared="false" x:Key="IconPhoto" Source="Resources\Icons\photo.png"/>
+				<Image x:Shared="false" x:Key="IconPhotoCopy" Source="Resources\Icons\photo - copy.png"/>
+				<Image x:Shared="false" x:Key="IconPhotoCrop" Source="Resources\Icons\photo - crop.png"/>
+				<Image x:Shared="false" x:Key="IconPhotoDelete" Source="Resources\Icons\photo - delete.png"/>
+				<Image x:Shared="false" x:Key="IconPhotoRedeye" Source="Resources\Icons\photo - redeye correction.png"/>
+
+				<Image x:Shared="false" x:Key="IconFile" Source="Resources\Icons\file.png"/>
+				<Image x:Shared="false" x:Key="IconFileCopy" Source="Resources\Icons\file - copy.png"/>
+				<Image x:Shared="false" x:Key="IconFileEdit" Source="Resources\Icons\edit.png"/>
+				<Image x:Shared="false" x:Key="IconFilePrint" Source="Resources\Icons\print.png"/>
+				<Image x:Shared="false" x:Key="IconFileClose" Source="Resources\Icons\closeBut.png"/>
+
+				<Image x:Shared="false" x:Key="IconDoc" Source="Resources\Icons\document.png"/>
+				<Image x:Shared="false" x:Key="IconDocCopy" Source="Resources\Icons\document - copy.png"/>
+				<Image x:Shared="false" x:Key="IconDocDelete" Source="Resources\Icons\document - delete.png"/>
+
+				<Image x:Shared="false" x:Key="IconTools" Source="Resources\Icons\tools.png"/>
+				<Image x:Shared="false" x:Key="IconToolsSearch" Source="Resources\Icons\search.png"/>
+				<Image x:Shared="false" x:Key="IconToolsTrash" Source="Resources\Icons\trash.png"/>
+				<Image x:Shared="false" x:Key="IconToolsUSB" Source="Resources\Icons\usb.png"/>
+
+				<Image x:Shared="false" x:Key="IconMail" Source="Resources\Icons\mail.png"/>
+				<Image x:Shared="false" x:Key="IconMailCopy" Source="Resources\Icons\mail - copy.png"/>
+				<Image x:Shared="false" x:Key="IconMailDelete" Source="Resources\Icons\mail - delete.png"/>
+				<Image x:Shared="false" x:Key="IconMailAttach" Source="Resources\Icons\attach.png"/>
+				<Image x:Shared="false" x:Key="IconChat" Source="Resources\Icons\chat.png"/>
+				<Image x:Shared="false" x:Key="IconRefresh" Source="Resources\Icons\refresh.png"/>
+			</s:ScatterView.Resources>
+			<!-- ElementMenu always visible. Demonstrates the ActivationMode property.--><!--SCATTER VIEW ITEM BOXES FOR THE BUILDING INFORMATION--><!--HC--><!--BUTTON ITEM BOXES FOR THE USER TO PRESS--><!--SC-->
+			<s:ScatterViewItem
         
-
-            <Grid Margin="0,285,-45,0">
-            <Button x:Name="LibraryButton" Height="75" Width="75" Opacity="0"
-Content="LB" Click="button_click" TouchDown="button_TouchDown"/>
-        </Grid>
-        <Grid Margin="0,350,475,0">
-            <Button x:Name="StudentCenterButton" Height="75" Width="75"   Opacity="0"
-Content="SC" Click="button_click" TouchDown="button_TouchDown"/>
-        </Grid>
-        <Grid Margin="0,0,-453,0">
-            <Button x:Name="FoyButton" Height="75" Width="200"   Opacity="0"
-Content="Foy" Click="button_click" TouchDown="button_TouchDown"/>
-        </Grid>
-        <Grid Margin="0,658,1091,0">
-            <Button x:Name="McCannButton" Height="100" Width="100"   Opacity="0"
-Content="MC" Click="button_click" TouchDown="button_TouchDown"/>
-        </Grid>
-        <Grid Margin="0,482,-320,0">
-            <Button x:Name="DonnellyButton" Height="100" Width="100"   Opacity="0"
-Content="DN" Click="button_click" TouchDown="button_TouchDown"/>
-        </Grid>
-        <Grid Margin="-148,326,-172,156">
-            <Button x:Name="HancockButton" Height="50" Width="140" Opacity="0"
-Content="Hancock" Click="button_click" TouchDown="button_TouchDown" Margin="1059,230" />
-        </Grid>
-
-        <s:ScatterView HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  >
-
-            <s:ScatterView.Resources>
-                <TextBlock x:Shared="true"  x:Key="Textbox" HorizontalAlignment="Left" Margin="0,0,0,0"  Text="TestingTesting" VerticalAlignment="Top" Width="100" FontSize="25" />
-                <Image x:Shared="false" x:Key="IconPhoto" Source="Resources\Icons\photo.png"/>
-                <Image x:Shared="false" x:Key="IconPhotoCopy" Source="Resources\Icons\photo - copy.png"/>
-                <Image x:Shared="false" x:Key="IconPhotoCrop" Source="Resources\Icons\photo - crop.png"/>
-                <Image x:Shared="false" x:Key="IconPhotoDelete" Source="Resources\Icons\photo - delete.png"/>
-                <Image x:Shared="false" x:Key="IconPhotoRedeye" Source="Resources\Icons\photo - redeye correction.png"/>
-
-                <Image x:Shared="false" x:Key="IconFile" Source="Resources\Icons\file.png"/>
-                <Image x:Shared="false" x:Key="IconFileCopy" Source="Resources\Icons\file - copy.png"/>
-                <Image x:Shared="false" x:Key="IconFileEdit" Source="Resources\Icons\edit.png"/>
-                <Image x:Shared="false" x:Key="IconFilePrint" Source="Resources\Icons\print.png"/>
-                <Image x:Shared="false" x:Key="IconFileClose" Source="Resources\Icons\file - close.png"/>
-
-                <Image x:Shared="false" x:Key="IconDoc" Source="Resources\Icons\document.png"/>
-                <Image x:Shared="false" x:Key="IconDocCopy" Source="Resources\Icons\document - copy.png"/>
-                <Image x:Shared="false" x:Key="IconDocDelete" Source="Resources\Icons\document - delete.png"/>
-
-                <Image x:Shared="false" x:Key="IconTools" Source="Resources\Icons\tools.png"/>
-                <Image x:Shared="false" x:Key="IconToolsSearch" Source="Resources\Icons\search.png"/>
-                <Image x:Shared="false" x:Key="IconToolsTrash" Source="Resources\Icons\trash.png"/>
-                <Image x:Shared="false" x:Key="IconToolsUSB" Source="Resources\Icons\usb.png"/>
-
-                <Image x:Shared="false" x:Key="IconMail" Source="Resources\Icons\mail.png"/>
-                <Image x:Shared="false" x:Key="IconMailCopy" Source="Resources\Icons\mail - copy.png"/>
-                <Image x:Shared="false" x:Key="IconMailDelete" Source="Resources\Icons\mail - delete.png"/>
-                <Image x:Shared="false" x:Key="IconMailAttach" Source="Resources\Icons\attach.png"/>
-                <Image x:Shared="false" x:Key="IconChat" Source="Resources\Icons\chat.png"/>
-                <Image x:Shared="false" x:Key="IconRefresh" Source="Resources\Icons\refresh.png"/>
-            </s:ScatterView.Resources>
-            <!-- ElementMenu always visible. Demonstrates the ActivationMode property.-->
-
-            <!--SCATTER VIEW ITEM BOXES FOR THE BUILDING INFORMATION-->
-            <!--SC-->
-            <s:ScatterViewItem
-        
-        x:Name="StudentCenter"
-        Height="175" 
-        Width="200" 
-        Orientation="0"
-        Background="#FF787878"
-        CanMove="False"
-        CanRotate="False" MaxWidth="500" MaxHeight="500" Center="9000,9000" Visibility="Visible" >
-                <Grid>
-                    <Grid>
-                    <Image Source="img/sc.jpg" Width="200" Height="200"  HorizontalAlignment="Left" VerticalAlignment="Bottom"> </Image>
-                    <TextBlock HorizontalAlignment="Center" Margin="0,0,-50,0"  Text="Student Center" VerticalAlignment="Top" Width="200" FontSize="20" />
-                    <s:ElementMenu                       
-            ActivationMode="AlwaysActive"
-            HorizontalAlignment="Right" 
-            VerticalAlignment="Top">
-                        <s:ElementMenuItem Header="{x:Static Resources:Resources.Photo}" Icon="{StaticResource IconPhoto}" >
-                            <s:ElementMenuItem Header="{x:Static Resources:Resources.Copy}" Icon="{StaticResource IconPhotoCopy}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                            <s:ElementMenuItem Header="{x:Static Resources:Resources.Crop}" Icon="{StaticResource IconPhotoCrop}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                            <s:ElementMenuItem Header="{x:Static Resources:Resources.Delete}" Icon="{StaticResource IconPhotoDelete}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                            <s:ElementMenuItem Header="{x:Static Resources:Resources.Redeye_Correction}" Icon="{StaticResource IconPhotoRedeye}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                        </s:ElementMenuItem>
-                        <s:ElementMenuItem Header="{x:Static Resources:Resources.File}"  Icon="{StaticResource IconFile}" >
-                            <s:ElementMenuItem Header="{x:Static Resources:Resources.Copy}" Icon="{StaticResource IconFileCopy}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                            <s:ElementMenuItem Header="{x:Static Resources:Resources.Edit}" Icon="{StaticResource IconFileEdit}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                            <s:ElementMenuItem Header="{x:Static Resources:Resources.Print}" Icon="{StaticResource IconFilePrint}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                            <s:ElementMenuItem Header="{x:Static Resources:Resources.Close}" Icon="{StaticResource IconFileClose}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                        </s:ElementMenuItem>
-                        <s:ElementMenuItem Header="{x:Static Resources:Resources.Document}" Icon="{StaticResource IconDoc}" >
-                            <s:ElementMenuItem Header="{x:Static Resources:Resources.Copy}" Icon="{StaticResource IconDocCopy}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                            <s:ElementMenuItem Header="{x:Static Resources:Resources.Delete}" Icon="{StaticResource IconDocDelete}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                        </s:ElementMenuItem>
+				x:Name="StudentCenter"
+				Height="175" 
+				Width="200" 
+				Orientation="0"
+				Background="#FF787878"
+				CanMove="False"
+				CanRotate="False" MaxWidth="500" MaxHeight="500" Center="9000,9000" Visibility="Visible" >
+				<Grid>
+					<Grid>
+						<Image Source="img/sc.jpg" Width="200" Height="200"  HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+						<TextBlock HorizontalAlignment="Center" Margin="0,0,-50,0"  Text="Student Center" VerticalAlignment="Top" Width="200" FontSize="20" />
+						<s:ElementMenu                       
+							ActivationMode="AlwaysActive"
+							HorizontalAlignment="Right" 
+							VerticalAlignment="Top">
+							<s:ElementMenuItem Header="{x:Static Resources:Resources.Photo}" Icon="{StaticResource IconPhoto}" >
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Copy}" Icon="{StaticResource IconPhotoCopy}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Crop}" Icon="{StaticResource IconPhotoCrop}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Delete}" Icon="{StaticResource IconPhotoDelete}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Redeye_Correction}" Icon="{StaticResource IconPhotoRedeye}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+							</s:ElementMenuItem>
+							<s:ElementMenuItem Header="{x:Static Resources:Resources.File}"  Icon="{StaticResource IconFile}" >
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Copy}" Icon="{StaticResource IconFileCopy}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Edit}" Icon="{StaticResource IconFileEdit}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Print}" Icon="{StaticResource IconFilePrint}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Close}" Icon="{StaticResource IconFileClose}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+							</s:ElementMenuItem>
+							<s:ElementMenuItem Header="{x:Static Resources:Resources.Document}" Icon="{StaticResource IconDoc}" >
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Copy}" Icon="{StaticResource IconDocCopy}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Delete}" Icon="{StaticResource IconDocDelete}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+							</s:ElementMenuItem>
                         
-                    </s:ElementMenu>
-                </Grid>
+						</s:ElementMenu>
+					</Grid>
                 
-                    <Grid>
-                        <Button x:Name="StudentCenterButtonX"  Width="25" Height="25" HorizontalAlignment="Left" 
-            VerticalAlignment="Top" Content="X" Click="button_click" TouchDown="button_TouchDown"></Button>
-                    </Grid>
-                </Grid>
-            </s:ScatterViewItem>
-            <!--LB-->
-            <s:ScatterViewItem
+					<Grid>
+						<Button x:Name="StudentCenterButtonX"  Width="25" Height="25" HorizontalAlignment="Left" 
+							VerticalAlignment="Top" Content="X" Click="button_click" TouchDown="button_TouchDown"/>
+					</Grid>
+				</Grid>
+			</s:ScatterViewItem>
+			<!--LB-->
+			<s:ScatterViewItem
         
-        x:Name="Library"
-        Height="175" 
-        Width="200" 
-        Orientation="0"
-        Background="#FF787878"
-        CanMove="False"
-        CanRotate="False" MaxWidth="500" MaxHeight="500" Center="9000,9000" Visibility="Visible" CanScale="False" DataContext="{Binding}">
-                <Grid>
-                    <Grid>
-                        <Image Source="img/lb.jpg" Width="200" Height="200"  HorizontalAlignment="Left" VerticalAlignment="Bottom"></Image>
-                        <TextBlock HorizontalAlignment="Center" Margin="0,0,-50,0"  Text="James Cannavino Library" VerticalAlignment="Top" Width="200" FontSize="20" />
-                        <s:ElementMenu                       
-            ActivationMode="AlwaysActive"
-            HorizontalAlignment="Right" 
-            VerticalAlignment="Top">
-                            <s:ElementMenuItem Header="{x:Static Resources:Resources.Photo}" Icon="{StaticResource IconPhoto}" >
-                                <s:ElementMenuItem Header="{x:Static Resources:Resources.Copy}" Icon="{StaticResource IconPhotoCopy}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                                <s:ElementMenuItem Header="{x:Static Resources:Resources.Crop}" Icon="{StaticResource IconPhotoCrop}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                                <s:ElementMenuItem Header="{x:Static Resources:Resources.Delete}" Icon="{StaticResource IconPhotoDelete}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                                <s:ElementMenuItem Header="{x:Static Resources:Resources.Redeye_Correction}" Icon="{StaticResource IconPhotoRedeye}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                            </s:ElementMenuItem>
-                            <s:ElementMenuItem Header="{x:Static Resources:Resources.File}"  Icon="{StaticResource IconFile}" >
-                                <s:ElementMenuItem Header="{x:Static Resources:Resources.Copy}" Icon="{StaticResource IconFileCopy}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                                <s:ElementMenuItem Header="{x:Static Resources:Resources.Edit}" Icon="{StaticResource IconFileEdit}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                                <s:ElementMenuItem Header="{x:Static Resources:Resources.Print}" Icon="{StaticResource IconFilePrint}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                                <s:ElementMenuItem Header="{x:Static Resources:Resources.Close}" Icon="{StaticResource IconFileClose}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                            </s:ElementMenuItem>
-                            <s:ElementMenuItem Header="{x:Static Resources:Resources.Document}" Icon="{StaticResource IconDoc}" >
-                                <s:ElementMenuItem Header="{x:Static Resources:Resources.Copy}" Icon="{StaticResource IconDocCopy}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                                <s:ElementMenuItem Header="{x:Static Resources:Resources.Delete}" Icon="{StaticResource IconDocDelete}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                            </s:ElementMenuItem>
+				x:Name="Library"
+				Height="175" 
+				Width="200" 
+				Orientation="0"
+				Background="#FF787878"
+				CanMove="False"
+				CanRotate="False" MaxWidth="500" MaxHeight="500" Center="9000,9000" Visibility="Visible" CanScale="False" DataContext="{Binding}">
+				<Grid>
+					<Grid>
+						<Image Source="img/lb.jpg" Width="200" Height="200"  HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+						<TextBlock HorizontalAlignment="Center" Margin="0,0,-50,0"  Text="James Cannavino Library" VerticalAlignment="Top" Width="200" FontSize="20" />
+						<s:ElementMenu                       
+							ActivationMode="AlwaysActive"
+							HorizontalAlignment="Right" 
+							VerticalAlignment="Top">
+							<s:ElementMenuItem Header="{x:Static Resources:Resources.Photo}" Icon="{StaticResource IconPhoto}" >
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Copy}" Icon="{StaticResource IconPhotoCopy}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Crop}" Icon="{StaticResource IconPhotoCrop}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Delete}" Icon="{StaticResource IconPhotoDelete}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Redeye_Correction}" Icon="{StaticResource IconPhotoRedeye}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+							</s:ElementMenuItem>
+							<s:ElementMenuItem Header="{x:Static Resources:Resources.File}"  Icon="{StaticResource IconFile}" >
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Copy}" Icon="{StaticResource IconFileCopy}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Edit}" Icon="{StaticResource IconFileEdit}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Print}" Icon="{StaticResource IconFilePrint}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Close}" Icon="{StaticResource IconFileClose}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+							</s:ElementMenuItem>
+							<s:ElementMenuItem Header="{x:Static Resources:Resources.Document}" Icon="{StaticResource IconDoc}" >
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Copy}" Icon="{StaticResource IconDocCopy}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Delete}" Icon="{StaticResource IconDocDelete}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+							</s:ElementMenuItem>
                             
-                        </s:ElementMenu>
-                    </Grid>
+						</s:ElementMenu>
+					</Grid>
 
-                    <Grid>
-                        <Button x:Name="LibraryButtonX"  Width="25" Height="25" HorizontalAlignment="Left" 
-            VerticalAlignment="Top" Content="X" Click="button_click" TouchDown="button_TouchDown"></Button>
-                    </Grid>
-                </Grid>
-            </s:ScatterViewItem>
-            <!--HC-->
-            <s:ScatterViewItem
+					<Grid>
+						<Button x:Name="LibraryButtonX"  Width="25" Height="25" HorizontalAlignment="Left" 
+							VerticalAlignment="Top" Content="X" Click="button_click" TouchDown="button_TouchDown"/>
+					</Grid>
+				</Grid>
+			</s:ScatterViewItem>
+			<!--MC-->
+			<s:ScatterViewItem
         
-        x:Name="Hancock"
-        Height="175" 
-        Width="200" 
-        Orientation="0"
-        Background="#FF787878"
-        CanMove="False"
-        CanRotate="False" MaxWidth="500" MaxHeight="500" Center="9000,9000" Visibility="Visible" >
-                <Grid>
-                    <Grid>
-                        <Image Source="img/hc.jpg" Width="200" Height="250"  HorizontalAlignment="Left" VerticalAlignment="Bottom"></Image>
-                        <TextBlock HorizontalAlignment="Center" Margin="0,0,-50,0"  Text="Hancock Center" VerticalAlignment="Top" Width="200" FontSize="20" />
-                        <s:ElementMenu                       
-            ActivationMode="AlwaysActive"
-            HorizontalAlignment="Right" 
-            VerticalAlignment="Top">
-                            <s:ElementMenuItem Header="{x:Static Resources:Resources.Photo}" Icon="{StaticResource IconPhoto}" >
-                                <s:ElementMenuItem Header="{x:Static Resources:Resources.Copy}" Icon="{StaticResource IconPhotoCopy}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                                <s:ElementMenuItem Header="{x:Static Resources:Resources.Crop}" Icon="{StaticResource IconPhotoCrop}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                                <s:ElementMenuItem Header="{x:Static Resources:Resources.Delete}" Icon="{StaticResource IconPhotoDelete}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                                <s:ElementMenuItem Header="{x:Static Resources:Resources.Redeye_Correction}" Icon="{StaticResource IconPhotoRedeye}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                            </s:ElementMenuItem>
-                            <s:ElementMenuItem Header="{x:Static Resources:Resources.File}"  Icon="{StaticResource IconFile}" >
-                                <s:ElementMenuItem Header="{x:Static Resources:Resources.Copy}" Icon="{StaticResource IconFileCopy}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                                <s:ElementMenuItem Header="{x:Static Resources:Resources.Edit}" Icon="{StaticResource IconFileEdit}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                                <s:ElementMenuItem Header="{x:Static Resources:Resources.Print}" Icon="{StaticResource IconFilePrint}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                                <s:ElementMenuItem Header="{x:Static Resources:Resources.Close}" Icon="{StaticResource IconFileClose}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                            </s:ElementMenuItem>
-                            <s:ElementMenuItem Header="{x:Static Resources:Resources.Document}" Icon="{StaticResource IconDoc}" >
-                                <s:ElementMenuItem Header="{x:Static Resources:Resources.Copy}" Icon="{StaticResource IconDocCopy}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                                <s:ElementMenuItem Header="{x:Static Resources:Resources.Delete}" Icon="{StaticResource IconDocDelete}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                            </s:ElementMenuItem>
-                            
-                        </s:ElementMenu>
-                    </Grid>
+				x:Name="McCann"
+				Height="150" 
+				Width="200" 
+				Orientation="0"
+				Background="#FF787878"
+				CanMove="False"
+				CanRotate="False" MaxWidth="500" MaxHeight="500" Center="9000,9000" Visibility="Visible" >
+               
+				<Grid>
+					<Grid>
+						<Image Source="img/mc.jpg" Width="200" Height="190"  HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+						<TextBlock HorizontalAlignment="Center" Margin="0,0,-50,0"  Text="McCann Center" VerticalAlignment="Top" Width="200" FontSize="20" />
+						<s:ElementMenu                       
+							ActivationMode="AlwaysActive"
+							HorizontalAlignment="Right" 
+							VerticalAlignment="Top">
+							<s:ElementMenuItem Header="{x:Static Resources:Resources.Photo}" Icon="{StaticResource IconPhoto}" >
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Copy}" Icon="{StaticResource IconPhotoCopy}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Crop}" Icon="{StaticResource IconPhotoCrop}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Delete}" Icon="{StaticResource IconPhotoDelete}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Redeye_Correction}" Icon="{StaticResource IconPhotoRedeye}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+							</s:ElementMenuItem>
+							<s:ElementMenuItem Header="{x:Static Resources:Resources.File}"  Icon="{StaticResource IconFile}" >
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Copy}" Icon="{StaticResource IconFileCopy}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Edit}" Icon="{StaticResource IconFileEdit}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Print}" Icon="{StaticResource IconFilePrint}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Close}" Icon="{StaticResource IconFileClose}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+							</s:ElementMenuItem>
+							<s:ElementMenuItem Header="{x:Static Resources:Resources.Document}" Icon="{StaticResource IconDoc}" >
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Copy}" Icon="{StaticResource IconDocCopy}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Delete}" Icon="{StaticResource IconDocDelete}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+							</s:ElementMenuItem>
 
-                    <Grid>
-                        <Button x:Name="HancockButtonX"  Width="25" Height="25" HorizontalAlignment="Left" 
-            VerticalAlignment="Top" Content="X" Click="button_click" TouchDown="button_TouchDown"></Button>
-                    </Grid>
-                </Grid>
-            </s:ScatterViewItem>
-            <!--MC-->
-            <s:ScatterViewItem
+						</s:ElementMenu>
+					</Grid>
+
+					<Grid>
+						<Button x:Name="McannButtonX"  Width="25" Height="25" HorizontalAlignment="Left" 
+							VerticalAlignment="Top" Content="X" Click="button_click" TouchDown="button_TouchDown"/>
+					</Grid>
+				</Grid>
+               
+			</s:ScatterViewItem>
+			<!--DN-->
+			<s:ScatterViewItem
         
-        x:Name="McCann"
-        Height="150" 
-        Width="200" 
-        Orientation="0"
-        Background="#FF787878"
-        CanMove="False"
-        CanRotate="False" MaxWidth="500" MaxHeight="500" Center="9000,9000" Visibility="Visible" >
+				x:Name="Donnelly"
+				Height="150" 
+				Width="200" 
+				Orientation="0"
+				Background="#FF787878"
+				CanMove="False"
+				CanRotate="False" MaxWidth="500" MaxHeight="500" Center="9000,9000" Visibility="Visible" RenderTransformOrigin="0.5,0.5" >
+				<s:ScatterViewItem.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform/>
+						<TranslateTransform X="8932" Y="8925"/>
+					</TransformGroup>
+				</s:ScatterViewItem.RenderTransform>
                
-                    <Grid>
-                        <Grid>
-                            <Image Source="img/mc.jpg" Width="200" Height="190"  HorizontalAlignment="Left" VerticalAlignment="Bottom"></Image>
-                            <TextBlock HorizontalAlignment="Center" Margin="0,0,-50,0"  Text="McCann Center" VerticalAlignment="Top" Width="200" FontSize="20" />
-                            <s:ElementMenu                       
-            ActivationMode="AlwaysActive"
-            HorizontalAlignment="Right" 
-            VerticalAlignment="Top">
-                                <s:ElementMenuItem Header="{x:Static Resources:Resources.Photo}" Icon="{StaticResource IconPhoto}" >
-                                    <s:ElementMenuItem Header="{x:Static Resources:Resources.Copy}" Icon="{StaticResource IconPhotoCopy}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                                    <s:ElementMenuItem Header="{x:Static Resources:Resources.Crop}" Icon="{StaticResource IconPhotoCrop}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                                    <s:ElementMenuItem Header="{x:Static Resources:Resources.Delete}" Icon="{StaticResource IconPhotoDelete}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                                    <s:ElementMenuItem Header="{x:Static Resources:Resources.Redeye_Correction}" Icon="{StaticResource IconPhotoRedeye}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                                </s:ElementMenuItem>
-                                <s:ElementMenuItem Header="{x:Static Resources:Resources.File}"  Icon="{StaticResource IconFile}" >
-                                    <s:ElementMenuItem Header="{x:Static Resources:Resources.Copy}" Icon="{StaticResource IconFileCopy}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                                    <s:ElementMenuItem Header="{x:Static Resources:Resources.Edit}" Icon="{StaticResource IconFileEdit}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                                    <s:ElementMenuItem Header="{x:Static Resources:Resources.Print}" Icon="{StaticResource IconFilePrint}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                                    <s:ElementMenuItem Header="{x:Static Resources:Resources.Close}" Icon="{StaticResource IconFileClose}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                                </s:ElementMenuItem>
-                                <s:ElementMenuItem Header="{x:Static Resources:Resources.Document}" Icon="{StaticResource IconDoc}" >
-                                    <s:ElementMenuItem Header="{x:Static Resources:Resources.Copy}" Icon="{StaticResource IconDocCopy}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                                    <s:ElementMenuItem Header="{x:Static Resources:Resources.Delete}" Icon="{StaticResource IconDocDelete}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                                </s:ElementMenuItem>
+				<Grid>
+					<Grid>
+						<Image Source="img/dn.jpg" Width="200" Height="190"  HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+						<TextBlock HorizontalAlignment="Center" Margin="0,0,-50,0"  Text="Donnelly Center" VerticalAlignment="Top" Width="200" FontSize="20" />
+						<s:ElementMenu                       
+							ActivationMode="AlwaysActive"
+							HorizontalAlignment="Right" 
+							VerticalAlignment="Top">
+							<s:ElementMenuItem Header="{x:Static Resources:Resources.Photo}" Icon="{StaticResource IconPhoto}" >
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Copy}" Icon="{StaticResource IconPhotoCopy}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Crop}" Icon="{StaticResource IconPhotoCrop}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Delete}" Icon="{StaticResource IconPhotoDelete}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Redeye_Correction}" Icon="{StaticResource IconPhotoRedeye}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+							</s:ElementMenuItem>
+							<s:ElementMenuItem Header="{x:Static Resources:Resources.File}"  Icon="{StaticResource IconFile}" >
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Copy}" Icon="{StaticResource IconFileCopy}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Edit}" Icon="{StaticResource IconFileEdit}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Print}" Icon="{StaticResource IconFilePrint}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Close}" Icon="{StaticResource IconFileClose}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+							</s:ElementMenuItem>
+							<s:ElementMenuItem Header="{x:Static Resources:Resources.Document}" Icon="{StaticResource IconDoc}" >
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Copy}" Icon="{StaticResource IconDocCopy}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+								<s:ElementMenuItem Header="{x:Static Resources:Resources.Delete}" Icon="{StaticResource IconDocDelete}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+							</s:ElementMenuItem>
 
-                            </s:ElementMenu>
-                        </Grid>
+						</s:ElementMenu>
+					</Grid>
 
-                        <Grid>
-                            <Button x:Name="McannButtonX"  Width="25" Height="25" HorizontalAlignment="Left" 
-            VerticalAlignment="Top" Content="X" Click="button_click" TouchDown="button_TouchDown"></Button>
-                        </Grid>
-                    </Grid>
-               
-            </s:ScatterViewItem>
-            <!--DN-->
-            <s:ScatterViewItem
-        
-        x:Name="Donnelly"
-        Height="150" 
-        Width="200" 
-        Orientation="0"
-        Background="#FF787878"
-        CanMove="False"
-        CanRotate="False" MaxWidth="500" MaxHeight="500" Center="9000,9000" Visibility="Visible" >
-               
-                    <Grid>
-                        <Grid>
-                            <Image Source="img/dn.jpg" Width="200" Height="190"  HorizontalAlignment="Left" VerticalAlignment="Bottom"></Image>
-                            <TextBlock HorizontalAlignment="Center" Margin="0,0,-50,0"  Text="Donnelly Center" VerticalAlignment="Top" Width="200" FontSize="20" />
-                            <s:ElementMenu                       
-            ActivationMode="AlwaysActive"
-            HorizontalAlignment="Right" 
-            VerticalAlignment="Top">
-                                <s:ElementMenuItem Header="{x:Static Resources:Resources.Photo}" Icon="{StaticResource IconPhoto}" >
-                                    <s:ElementMenuItem Header="{x:Static Resources:Resources.Copy}" Icon="{StaticResource IconPhotoCopy}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                                    <s:ElementMenuItem Header="{x:Static Resources:Resources.Crop}" Icon="{StaticResource IconPhotoCrop}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                                    <s:ElementMenuItem Header="{x:Static Resources:Resources.Delete}" Icon="{StaticResource IconPhotoDelete}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                                    <s:ElementMenuItem Header="{x:Static Resources:Resources.Redeye_Correction}" Icon="{StaticResource IconPhotoRedeye}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                                </s:ElementMenuItem>
-                                <s:ElementMenuItem Header="{x:Static Resources:Resources.File}"  Icon="{StaticResource IconFile}" >
-                                    <s:ElementMenuItem Header="{x:Static Resources:Resources.Copy}" Icon="{StaticResource IconFileCopy}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                                    <s:ElementMenuItem Header="{x:Static Resources:Resources.Edit}" Icon="{StaticResource IconFileEdit}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                                    <s:ElementMenuItem Header="{x:Static Resources:Resources.Print}" Icon="{StaticResource IconFilePrint}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                                    <s:ElementMenuItem Header="{x:Static Resources:Resources.Close}" Icon="{StaticResource IconFileClose}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                                </s:ElementMenuItem>
-                                <s:ElementMenuItem Header="{x:Static Resources:Resources.Document}" Icon="{StaticResource IconDoc}" >
-                                    <s:ElementMenuItem Header="{x:Static Resources:Resources.Copy}" Icon="{StaticResource IconDocCopy}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                                    <s:ElementMenuItem Header="{x:Static Resources:Resources.Delete}" Icon="{StaticResource IconDocDelete}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                                </s:ElementMenuItem>
-
-                            </s:ElementMenu>
-                        </Grid>
-
-                        <Grid>
-                            <Button x:Name="DonnellyButtonX"  Width="25" Height="25" HorizontalAlignment="Left" 
-            VerticalAlignment="Top" Content="X" Click="button_click" TouchDown="button_TouchDown"></Button>
-                        </Grid>
-                    </Grid>
+					<Grid>
+						<Button x:Name="DonnellyButtonX"  Width="25" Height="25" HorizontalAlignment="Left" 
+							VerticalAlignment="Top" Content="X" Click="button_click" TouchDown="button_TouchDown"/>
+					</Grid>
+				</Grid>
                 
-            </s:ScatterViewItem>
-            <!--Foy-->
-            <s:ScatterViewItem
+			</s:ScatterViewItem>
+			<!--Foy-->
+			<s:ScatterViewItem
         
-        x:Name="Foy"
-        Height="50" 
-        Width="50" 
-        Orientation="0"
-        Background="#FF787878"
-        CanMove="False"
-        CanRotate="False" MaxWidth="500" MaxHeight="500" Center="9000,9000" Visibility="Visible" >
+				x:Name="Foy"
+				Height="50" 
+				Width="50" 
+				Orientation="0"
+				Background="#FF787878"
+				CanMove="False"
+				CanRotate="False" MaxWidth="500" MaxHeight="500" Center="9000,9000" Visibility="Visible" >
                 
-                <s:ElementMenu 
-            ActivationMode="AlwaysActive"
-            HorizontalAlignment="Left" 
-            VerticalAlignment="Top">
+				<s:ElementMenu 
+					ActivationMode="AlwaysActive"
+					HorizontalAlignment="Left" 
+					VerticalAlignment="Top">
                     
-                    <s:ElementMenuItem Header="{x:Static Resources:Resources.Photo}" Icon="{StaticResource IconPhoto}" >
-                        <s:ElementMenuItem Header="{x:Static Resources:Resources.Copy}" Icon="{StaticResource IconPhotoCopy}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                        <s:ElementMenuItem Header="{x:Static Resources:Resources.Crop}" Icon="{StaticResource IconPhotoCrop}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                        <s:ElementMenuItem Header="{x:Static Resources:Resources.Delete}" Icon="{StaticResource IconPhotoDelete}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                        <s:ElementMenuItem Header="{x:Static Resources:Resources.Redeye_Correction}" Icon="{StaticResource IconPhotoRedeye}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                    </s:ElementMenuItem>
-                    <s:ElementMenuItem Header="{x:Static Resources:Resources.File}"  Icon="{StaticResource IconFile}" >
-                        <s:ElementMenuItem Header="{x:Static Resources:Resources.Copy}" Icon="{StaticResource IconFileCopy}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                        <s:ElementMenuItem Header="{x:Static Resources:Resources.Edit}" Icon="{StaticResource IconFileEdit}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                        <s:ElementMenuItem Header="{x:Static Resources:Resources.Print}" Icon="{StaticResource IconFilePrint}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                        <s:ElementMenuItem Header="{x:Static Resources:Resources.Close}" Icon="{StaticResource IconFileClose}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                    </s:ElementMenuItem>
-                    <s:ElementMenuItem Header="{x:Static Resources:Resources.Document}" Icon="{StaticResource IconDoc}" >
-                        <s:ElementMenuItem Header="{x:Static Resources:Resources.Copy}" Icon="{StaticResource IconDocCopy}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                        <s:ElementMenuItem Header="{x:Static Resources:Resources.Delete}" Icon="{StaticResource IconDocDelete}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Path=Header, RelativeSource={x:Static RelativeSource.Self}}"/>
-                    </s:ElementMenuItem>
+					<s:ElementMenuItem Header="{x:Static Resources:Resources.Photo}" Icon="{StaticResource IconPhoto}" >
+						<s:ElementMenuItem Header="{x:Static Resources:Resources.Copy}" Icon="{StaticResource IconPhotoCopy}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+						<s:ElementMenuItem Header="{x:Static Resources:Resources.Crop}" Icon="{StaticResource IconPhotoCrop}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+						<s:ElementMenuItem Header="{x:Static Resources:Resources.Delete}" Icon="{StaticResource IconPhotoDelete}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+						<s:ElementMenuItem Header="{x:Static Resources:Resources.Redeye_Correction}" Icon="{StaticResource IconPhotoRedeye}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+					</s:ElementMenuItem>
+					<s:ElementMenuItem Header="{x:Static Resources:Resources.File}"  Icon="{StaticResource IconFile}" >
+						<s:ElementMenuItem Header="{x:Static Resources:Resources.Copy}" Icon="{StaticResource IconFileCopy}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+						<s:ElementMenuItem Header="{x:Static Resources:Resources.Edit}" Icon="{StaticResource IconFileEdit}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+						<s:ElementMenuItem Header="{x:Static Resources:Resources.Print}" Icon="{StaticResource IconFilePrint}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+						<s:ElementMenuItem Header="{x:Static Resources:Resources.Close}" Icon="{StaticResource IconFileClose}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+					</s:ElementMenuItem>
+					<s:ElementMenuItem Header="{x:Static Resources:Resources.Document}" Icon="{StaticResource IconDoc}" >
+						<s:ElementMenuItem Header="{x:Static Resources:Resources.Copy}" Icon="{StaticResource IconDocCopy}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+						<s:ElementMenuItem Header="{x:Static Resources:Resources.Delete}" Icon="{StaticResource IconDocDelete}" Command="{x:Static local:Window1.ShowMessageCommand}" CommandParameter="{Binding Header, RelativeSource={x:Static RelativeSource.Self}}"/>
+					</s:ElementMenuItem>
                     
-                </s:ElementMenu>
+				</s:ElementMenu>
                 
-            </s:ScatterViewItem>
-            
-            <!--BUTTON ITEM BOXES FOR THE USER TO PRESS-->
-
-        </s:ScatterView>
+			</s:ScatterViewItem>
+			<s:ScatterViewItem
         
-        <Grid Opacity="0.8">
-            <Rectangle Fill="Gray" Margin="1523,0,0,729"></Rectangle>
-            <Image Height="139" HorizontalAlignment="Left" Margin="1540,0,0,0" Name="logo" Stretch="Fill" VerticalAlignment="Top" Width="298" Source="maristlogo.png" />
-            <TextBlock Height="167" HorizontalAlignment="Left" Margin="1532,145,0,0" Name="textBlock1" Text="Welcome to the interactive map of Marist College. This is a prototype! Please tap a building to see more." VerticalAlignment="Top" Width="358" FontSize="25" />
-        </Grid>
-        <!--<TextBlock x:Name="textMessage" Width="500" Margin="40" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontFamily="Segoe360" FontSize="17" />-->
+				x:Name="Hancock" 
+				Orientation="0"
+				Background="#FF787878" MaxWidth="500" MaxHeight="500" Center="9000,9000" CanScale="True" Visibility="Visible" RenderTransformOrigin="0.5,0.5" Width="200" Height="150" >
+				<s:ScatterViewItem.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform/>
+						<TranslateTransform Y="0" X="0"/>
+					</TransformGroup>
+				</s:ScatterViewItem.RenderTransform>
+       
+				<Grid x:Name="grid1">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+                    <Grid x:Name="HancockDetails" Height="{Binding ActualHeight, ElementName=grid1}" Grid.Column="1" RenderTransformOrigin="0.5,0.5" FlowDirection="RightToLeft" HorizontalAlignment="Right" Margin="0,0,-87.333,0" Width="287.333" Visibility="Collapsed">
+						<Grid.RenderTransform>
+							<TranslateTransform x:Name="hcDetailTransform" />
+						</Grid.RenderTransform>
 
-    </Grid>
+                    	<Rectangle VerticalAlignment="Top" HorizontalAlignment="Left" Height="{Binding ActualHeight, ElementName=HancockDetails}" Stroke="Black" Width="{Binding ActualWidth, ElementName=HancockDetails}">
+                    		<Rectangle.Fill>
+                    			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    				<GradientStop Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}" Offset="0"/>
+                    				<GradientStop Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}" Offset="1"/>
+                    			</LinearGradientBrush>
+                    		</Rectangle.Fill>
+                    	</Rectangle>
+                    	<TabControl HorizontalAlignment="Right" Height="{Binding ActualHeight, ElementName=HancockDetails}" VerticalAlignment="Top" Width="{Binding ActualWidth, ElementName=HancockDetails}" UseLayoutRounding="False" TabStripPlacement="Right" FlowDirection="LeftToRight">
+                    		
+                            <TabItem x:Name="hcBuildingTab" Header="Building" HorizontalContentAlignment="Stretch" UseLayoutRounding="True" TouchDown="TabItem_TouchDown">
+                    			<Grid Background="#FFE5E5E5">
+                                    <ScrollViewer>
+                    				<TextBlock x:Name="hcBuildingInfo" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+                                    </ScrollViewer>
+                                </Grid>
+                    		</TabItem>
+                    		<TabItem x:Name="hcDepTab" Header="Departments" TouchDown="TabItem_TouchDown" HorizontalContentAlignment="Stretch">
+                    			<Grid Background="#FFE5E5E5">
+                                    <ScrollViewer>
+                                        <TextBlock x:Name="hcDepInfo" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+                                    </ScrollViewer>
+                                </Grid>
+                    		</TabItem>
+                    		<TabItem x:Name="hcPhoneTab" Header="Phone" TouchDown="TabItem_TouchDown" HorizontalContentAlignment="Stretch" >
+                    			<Grid Background="#FFE5E5E5">
+                                    <ScrollViewer>
+                    				<TextBlock x:Name="hcPhoneInfo" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+                                    </ScrollViewer>
+                                </Grid>
+                    		</TabItem>
+                    	</TabControl>
+                    	<Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="{Binding ActualWidth, ElementName=HancockDetails}" Height="{Binding ActualHeight, ElementName=HancockDetails}"/>
+                        
+					</Grid>
+                    <Grid ClipToBounds="True" Grid.ColumnSpan="2">
+						<Image Source="img/hc.jpg" Height="{Binding ActualHeight, ElementName=Hancock}" Width="{Binding ActualWidth, ElementName=Hancock}" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="1,0.5" Cursor="None" Stretch="UniformToFill"/>
+					</Grid>
+					<Border BorderBrush="Black" BorderThickness="1.5" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Top" Opacity="0.695" Width="{Binding ActualWidth, ElementName=grid1}" Height="{Binding ActualHeight, ElementName=grid1}"/>
+					<s:ElementMenu x:Name="elementMenu"                       
+						ActivationMode="AlwaysActive"
+						HorizontalAlignment="Right" 
+						VerticalAlignment="Top" Margin="0,-50,-50,0" Grid.Column="1">
+                        <s:ElementMenuItem Header="{x:Static Resources:Resources.Photo}" Icon="{StaticResource IconPhoto}" Click="addPhotoControlBox"/>
+						<!--Make note of the name of the Close Button-->
+						<s:ElementMenuItem Header="{x:Static Resources:Resources.Close}"  Icon="{StaticResource IconFileClose}" Click="button_click" x:Name="HancockCloseButton" />
+						<s:ElementMenuItem Header="{x:Static Resources:Resources.Document}" Icon="{StaticResource IconDoc}" x:Name="HancockDetailButton" Click="slideDOut"/>  
+					</s:ElementMenu>
+					<Ellipse Width="132.667" Height="37.5" 
+						HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-0.5,-24,0,0" Grid.ColumnSpan="2" Stroke="Black" StrokeThickness="0.5">
+						<Ellipse.Fill>
+							<LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+								<GradientStop Color="#EDF0F4" Offset="0.2" />
+								<GradientStop Color="#93A4C1" Offset="1" />
+							</LinearGradientBrush>
+						</Ellipse.Fill>
+					</Ellipse>
+					<s:LibraryBarItem Content="Hancock Center" HorizontalAlignment="Left" Margin="6.667,-17.5,0,0" VerticalAlignment="Top" Foreground="Black" Width="125" Height="22" FontSize="16" Grid.ColumnSpan="2"/>
+				</Grid>
+			</s:ScatterViewItem>
+
+		</s:ScatterView>
+
+       
+
+
+
+        <!-- ElementMenu -->
+
+    
+		<!--<TextBlock x:Name="textMessage" Width="500" Margin="40" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontFamily="Segoe360" FontSize="17" />-->
+
+	</Grid>
 
     
 </s:SurfaceWindow>

@@ -98,3 +98,90 @@ C:\Users\Anthony\Documents\GitHub\Marist_Map\WPF\ControlsBox\obj\Debug\ControlsB
 C:\Users\Anthony\Documents\GitHub\Marist_Map\WPF\ControlsBox\obj\Debug\GenerateResource.read.1.tlog
 C:\Users\Anthony\Documents\GitHub\Marist_Map\WPF\ControlsBox\obj\Debug\GenerateResource.write.1.tlog
 C:\Users\Anthony\Documents\GitHub\Marist_Map\WPF\ControlsBox\obj\Debug\es\ControlsBox.resources.dll
+\\ideal.corp.local\storage\USERDATA\BarrancA\My Documents\Map\Marist_Map\WPF\ControlsBox\bin\Debug\InstalledAppInfo\appIcon.png
+\\ideal.corp.local\storage\USERDATA\BarrancA\My Documents\Map\Marist_Map\WPF\ControlsBox\obj\Debug\Page1.baml
+\\ideal.corp.local\storage\USERDATA\BarrancA\My Documents\Map\Marist_Map\WPF\ControlsBox\obj\Debug\TagVisual.baml
+\\ideal.corp.local\storage\USERDATA\BarrancA\My Documents\Map\Marist_Map\WPF\ControlsBox\obj\Debug\App.baml
+\\ideal.corp.local\storage\USERDATA\BarrancA\My Documents\Map\Marist_Map\WPF\ControlsBox\obj\Debug\Page1.g.cs
+\\ideal.corp.local\storage\USERDATA\BarrancA\My Documents\Map\Marist_Map\WPF\ControlsBox\obj\Debug\TagVisual.g.cs
+\\ideal.corp.local\storage\USERDATA\BarrancA\My Documents\Map\Marist_Map\WPF\ControlsBox\obj\Debug\Window1.g.cs
+\\ideal.corp.local\storage\USERDATA\BarrancA\My Documents\Map\Marist_Map\WPF\ControlsBox\obj\Debug\App.g.cs
+\\ideal.corp.local\storage\USERDATA\BarrancA\My Documents\Map\Marist_Map\WPF\ControlsBox\obj\Debug\Window1.baml
+\\ideal.corp.local\storage\USERDATA\BarrancA\My Documents\Map\Marist_Map\WPF\ControlsBox\obj\Debug\ControlsBox.Resources.Resources.resources
+\\ideal.corp.local\storage\USERDATA\BarrancA\My Documents\Map\Marist_Map\WPF\ControlsBox\obj\Debug\ControlsBox.Resources.Resources.es.resources
+\\ideal.corp.local\storage\USERDATA\BarrancA\My Documents\Map\Marist_Map\WPF\ControlsBox\obj\Debug\ControlsBox.csproj.GenerateResource.Cache
+\\ideal.corp.local\storage\USERDATA\BarrancA\My Documents\Map\Marist_Map\WPF\ControlsBox\bin\Debug\MaristMap.exe
+\\ideal.corp.local\storage\USERDATA\BarrancA\My Documents\Map\Marist_Map\WPF\ControlsBox\bin\Debug\MaristMap.pdb
+\\ideal.corp.local\storage\USERDATA\BarrancA\My Documents\Map\Marist_Map\WPF\ControlsBox\bin\Debug\es\MaristMap.resources.dll
+\\ideal.corp.local\storage\USERDATA\BarrancA\My Documents\Map\Marist_Map\WPF\ControlsBox\obj\Debug\MaristMap_MarkupCompile.cache
+\\ideal.corp.local\storage\USERDATA\BarrancA\My Documents\Map\Marist_Map\WPF\ControlsBox\obj\Debug\MaristMap_MarkupCompile.lref
+\\ideal.corp.local\storage\USERDATA\BarrancA\My Documents\Map\Marist_Map\WPF\ControlsBox\obj\Debug\MaristMap.g.resources
+\\ideal.corp.local\storage\USERDATA\BarrancA\My Documents\Map\Marist_Map\WPF\ControlsBox\obj\Debug\es\MaristMap.resources.dll
+\\ideal.corp.local\storage\USERDATA\BarrancA\My Documents\Map\Marist_Map\WPF\ControlsBox\obj\Debug\MaristMap.exe
+\\ideal.corp.local\storage\USERDATA\BarrancA\My Documents\Map\Marist_Map\WPF\ControlsBox\obj\Debug\MaristMap.pdb
+\\ideal.corp.local\storage\USERDATA\BarrancA\My Documents\Map\Marist_Map\WPF\ControlsBox\obj\Debug\Shared\LibraryControlResourceDictionary.baml
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\InstalledAppInfo\appIcon.png
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\MaristMap.exe.manifest
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\MaristMap.application
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\MaristMap.exe
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\MaristMap.pdb
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\es\MaristMap.resources.dll
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\CustomWindow.dll
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\Hammock.ClientProfile.dll
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\Microsoft.Expression.Drawing.dll
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\Microsoft.Expression.Effects.dll
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\Microsoft.Expression.Interactions.dll
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\Newtonsoft.Json.dll
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\TweetSharp.dll
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\CustomWindow.pdb
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\Hammock.ClientProfile.pdb
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\Microsoft.Expression.Drawing.xml
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\Microsoft.Expression.Effects.xml
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\Microsoft.Expression.Interactions.xml
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\Newtonsoft.Json.xml
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\System.Windows.Interactivity.xml
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\TweetSharp.pdb
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\de\Microsoft.Expression.Interactions.resources.dll
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\en\Microsoft.Expression.Interactions.resources.dll
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\es\Microsoft.Expression.Interactions.resources.dll
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\fr\Microsoft.Expression.Interactions.resources.dll
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\it\Microsoft.Expression.Interactions.resources.dll
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\ja\Microsoft.Expression.Interactions.resources.dll
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\ko\Microsoft.Expression.Interactions.resources.dll
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\zh-Hans\Microsoft.Expression.Interactions.resources.dll
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\zh-Hant\Microsoft.Expression.Interactions.resources.dll
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\obj\Debug\ControlsBox.csprojResolveAssemblyReference.cache
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\obj\Debug\Page1.baml
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\obj\Debug\Shared\LibraryControlResourceDictionary.baml
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\obj\Debug\Simple Styles.baml
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\obj\Debug\TagVisual.baml
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\obj\Debug\ImageButton.baml
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\obj\Debug\App.baml
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\obj\Debug\Page1.g.cs
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\obj\Debug\TagVisual.g.cs
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\obj\Debug\ImageButton.g.cs
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\obj\Debug\Window1.g.cs
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\obj\Debug\App.g.cs
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\obj\Debug\MaristMap_MarkupCompile.cache
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\obj\Debug\MaristMap_MarkupCompile.lref
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\obj\Debug\Window1.baml
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\obj\Debug\MaristMap.g.resources
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\obj\Debug\ControlsBox.Resources.Resources.resources
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\obj\Debug\ControlsBox.Resources.Resources.es.resources
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\obj\Debug\ControlsBox.csproj.GenerateResource.Cache
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\obj\Debug\es\MaristMap.resources.dll
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\obj\Debug\MaristMap.exe.manifest
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\obj\Debug\MaristMap.application
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\obj\Debug\MaristMap.exe
+C:\Users\barranca\Desktop\Map\Marist_Map\WPF\ControlsBox\obj\Debug\MaristMap.pdb

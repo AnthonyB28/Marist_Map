@@ -7,9 +7,12 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="LibraryControlResourceDictionary.xaml" />
+                <ResourceDictionary Source="/PresentationFramework.Aero;V3.0.0.0;31bf3856ad364e35;component\themes/aero.normalcolor.xaml" />
                 <ResourceDictionary Source="/Microsoft.Surface.Presentation.Generic;v2.0.0.0;31bf3856ad364e35;component/themes\styles.xaml"/>
+                <ResourceDictionary Source="Simple Styles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+            <!-- Dummy Style, anything you won't use goes -->
+            <Style TargetType="{x:Type Rectangle}" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>
